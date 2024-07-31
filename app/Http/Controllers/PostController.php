@@ -1,5 +1,3 @@
-<?php
-
 namespace App\Http\Controllers;
 
 use App\Models\Post;
@@ -20,45 +18,41 @@ class PostController extends Controller
 
     public function store(Request $request)
     {
-        $request->validate([
-            'title' => 'required',
-            'body' => 'required',
-        ]);
+        $post = new Post;
+        $post->title = $request->title;
+        $post->body = $request->body;
+        $post->save();
 
-        Post::create($request->all());
-
-        return redirect()->route('posts.index')
-                         ->with('success', 'Post created successfully.');
+        return redirect()->route('posts.index');
     }
 
-    public function show(Post $post)
+    public function show($id)
     {
+        $post = Post::findOrFail($id);
         return view('posts.show', compact('post'));
     }
 
-    public function edit(Post $post)
+    public function edit($id)
     {
+        $post = Post::findOrFail($id);
         return view('posts.edit', compact('post'));
     }
 
-    public function update(Request $request, Post $post)
+    public function update(Request $request, $id)
     {
-        $request->validate([
-            'title' => 'required',
-            'body' => 'required',
-        ]);
+        $post = Post::findOrFail($id);
+        $post->title = $request->title;
+        $post->body = $request->body;
+        $post->save();
 
-        $post->update($request->all());
-
-        return redirect()->route('posts.index')
-                         ->with('success', 'Post updated successfully.');
+        return redirect()->route('posts.index');
     }
 
-    public function destroy(Post $post)
+    public function destroy($id)
     {
+        $post = Post::findOrFail($id);
         $post->delete();
 
-        return redirect()->route('posts.index')
-                         ->with('success', 'Post deleted successfully.');
+        return redirect()->route('posts.index');
     }
 }
