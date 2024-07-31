@@ -1,3 +1,26 @@
+# Title: Blog CRUD Application with Laravel
+
+# Objective:
+Create a basic CRUD application for managing blog posts using Laravel.
+
+# Approach:
+
+1.Set up the development environment and tools.
+2.Created a new Laravel project and configured version control with Git and GitHub.
+3.Configured the database and environment settings.
+4.Defined routes, models, migrations, factories, seeders, controllers, and views.
+5.Implemented and tested CRUD functionalities.
+Challenges Faced:
+
+# Issues with Git authentication resolved by switching to SSH.
+1.Errors with migrations fixed by correctly configuring the .env file.
+
+# Conclusion:
+Successfully developed a CRUD application for managing blog posts using Laravel, with the source code version controlled and pushed to GitHub.
+
+
+
+
 # MyBlog
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
